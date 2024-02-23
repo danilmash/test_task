@@ -11,17 +11,11 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/data',
+      path: '/data/:data?',
       name: 'data',
       component: DataView,
-      props: (route) => {
-        if (route.query.data) {
-          return { data: JSON.parse(route.query.data) };
-        } else {
-          return { data: {} }; 
-        }
-      }
-    }
+      props: true,
+    },
   ] 
 })
 
