@@ -1,12 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 body {
   font-family: "Roboto";
-  padding: 15px;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .form-data {
-  visibility: hidden;
-  margin: 200px auto 0;
+  display: none;
   border: 2px solid black;
   border-radius: 30px;
   max-width: 500px;
@@ -15,14 +26,16 @@ body {
   font-size: 1.25rem;
 }
 .form-data_visible {
-  visibility: visible;
+  display: block;
+}
+.form-data li {
+  margin: 0;
+}
+.form-data p {
+  margin: 0;
 }
 
 .start-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   font-family: "Roboto";
   font-weight: 600;
   font-size: 2rem;

@@ -1,22 +1,20 @@
-const startButton = document.getElementsByClassName('start-button')[0]
-const popup = document.getElementsByClassName('popup')[0]
-const form = document.getElementsByClassName('form')[0]
-const formDataHTML = document.getElementsByClassName('form-data')[0]
+const startButton = document.querySelector('.start-button')
+const popup = document.querySelector('.popup')
+const form = document.querySelector('.form')
+const formDataHTML = document.querySelector('.form-data')
 
-let formData = {
-    
-}
+let formData = {}
 
-function logformData() {
+function logformData() { 
     formDataHTML.innerHTML = ""
-    Object.keys(formData).forEach(name => {
-        const formDataContainer = document.createElement('div')
+    Object.keys(formData).forEach(name => { // для каждой пары в объекте создает li c p внутри
+        const formDataContainer = document.createElement('li') 
         const formDataValue = document.createElement('p')
         formDataValue.innerHTML = `${name} => ${formData[name]}`
         formDataContainer.append(formDataValue)
         formDataHTML.append(formDataContainer)
     });
-    formDataHTML.classList.add('form-data_visible')
+    formDataHTML.classList.add('form-data_visible') // добавление класса visible чтобы появилась информация
 }
 
 form.addEventListener('submit', (e) => {

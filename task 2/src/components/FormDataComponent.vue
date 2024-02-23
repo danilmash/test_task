@@ -1,7 +1,7 @@
 <template lang="">
     <div class="form-data">
-        <p v-if="Object.keys(data).length" v-for="key in getDataKeys" :key="key">
-            {{ `${key} => ${data[key]}` }}
+        <p v-if="Object.keys(data).length" v-for="(value, key) in data" :key="key">
+            {{ `${key} => ${value}` }}
         </p>
         <p v-else>Данных не отправлено</p>
     </div>
@@ -12,14 +12,6 @@ export default {
         data: {
             type: Object
         }
-    },
-
-    computed: {
-        getDataKeys() { // Получить ключи из переданного объекта
-            if(Object.keys(this.data).length) {
-                return Object.keys(this.data)
-            }
-        },
     },
 }
 </script>
